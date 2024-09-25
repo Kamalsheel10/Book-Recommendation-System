@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #5f788a;
+            margin-bottom: 20px;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .searched-books {
+            margin-top: 20px;
+        }
+
+        .searched-books h2 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .book-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #5f788a;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #4c666e;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ username }}!</h1>
+        <div class="content-section">
+            <h2>Your Profile</h2>
+            <div class="profile-info">Username: {{ username }}</div>
+
+        </div>
+       <form action="{{ url_for('index') }}" method="get">
+            <button type="submit" class="btn">Home</button>
+        </form>
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit" class="btn">Logout</button>
+        </form>
+
+    </div>
+    <footer>
+        <p>&copy; 2024 Book Recommendation System</p>
+    </footer>
+</body>
+</html>
